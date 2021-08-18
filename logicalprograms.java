@@ -1,29 +1,19 @@
 import java.util.Scanner;
 
-public class PrimeNumber {
+public class ReverseNumber {
     public static void main(String[] args) {
-        int i, number = 0 , flag=0;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter your number");
+        int reverse=0 ;
+         Scanner sc = new Scanner(System.in);
+        System.out.println("enter number:");
         int n = sc.nextInt();
-        number= n/2;
-        if (n==0 || n==1) {
-            System.out.println("number is not prime number.");
-        }
-        else {
-            for (i=2;i<=number;i++){
-                if (n%i==0){
-                    System.out.println("number is not prime number.");
+        while (n!=0){
+            int reminder = n%10; 
+                                
+            reverse = reverse*10+reminder; 
+            n=n/10;
 
-                    flag=1;
-                    break;
-                }
-            }
-            if (flag==0){
-                System.out.println("number is prime number.");
-            }
         }
+        System.out.println("the reverse number is "+reverse);
+
     }
-
 }
-
