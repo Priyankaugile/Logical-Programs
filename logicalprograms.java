@@ -1,25 +1,29 @@
 import java.util.Scanner;
 
-public class PerfectNumber {
+public class PrimeNumber {
     public static void main(String[] args) {
-        int i,sum=0;
+        int i, number = 0 , flag=0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter the number: "); 
-        int number = sc.nextInt();
-
-        for (i = 1; i<number; i++){ 
-
-
-            if(number % i == 0){ 
-                sum = sum+i; 
-            }
-        }
-        if (sum == number){ 
-            System.out.println("Number is perfect."); 
+        System.out.println("enter your number");
+        int n = sc.nextInt();
+        number= n/2;
+        if (n==0 || n==1) {
+            System.out.println("number is not prime number.");
         }
         else {
-            System.out.println("Number is not perfect.");
-        }
+            for (i=2;i<=number;i++){
+                if (n%i==0){
+                    System.out.println("number is not prime number.");
 
+                    flag=1;
+                    break;
+                }
+            }
+            if (flag==0){
+                System.out.println("number is prime number.");
+            }
+        }
     }
+
 }
+
