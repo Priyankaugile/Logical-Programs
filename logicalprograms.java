@@ -1,18 +1,25 @@
 import java.util.Scanner;
 
-public class FibonacciSeries {
+public class PerfectNumber {
     public static void main(String[] args) {
-        int n1=0,n2=1,n3,i;
+        int i,sum=0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter number: ");
+        System.out.println("enter the number: "); 
         int number = sc.nextInt();
-        for (i=2; i<number; i++){
-            n3=n1+n2;
-            System.out.println(" " +n3);
-            n1=n2; 
-            n2=n3;
+
+        for (i = 1; i<number; i++){ 
+
+
+            if(number % i == 0){ 
+                sum = sum+i; 
+            }
         }
+        if (sum == number){ 
+            System.out.println("Number is perfect."); 
+        }
+        else {
+            System.out.println("Number is not perfect.");
+        }
+
     }
 }
-
-
