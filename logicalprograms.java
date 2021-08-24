@@ -1,29 +1,30 @@
 import java.util.Scanner;
 
-public class PrimeNumber {
+public class CouponNumber {
+
     public static void main(String[] args) {
-        int i, number = 0 , flag=0;
+
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter your number");
-        int n = sc.nextInt();
-        number= n/2;
-        if (n==0 || n==1) {
-            System.out.println("number is not prime number.");
-        }
-        else {
-            for (i=2;i<=number;i++){
-                if (n%i==0){
-                    System.out.println("number is not prime number.");
+        System.out.println("enter how many coupon number you want: ");
+        int num = sc.nextInt();
+        char [] chars="abcdefghijklmnopqrstuvwxyz@#$%&*0123456789".toCharArray();
+        int max = 100000000;
+       int randome = (int)(Math.random()*max);
+        StringBuffer n = new StringBuffer();
 
-                    flag=1;
-                    break;
-                }
-            }
-            if (flag==0){
-                System.out.println("number is prime number.");
+        while(randome>0){
+            for (int i=0; i<=num; i++) {
+
+                 System.out.println("number:" +chars.length);
+                 n.append(chars[randome% chars.length]);
+                 randome /= chars.length;
+
             }
         }
+
+        String couponCode = n.toString();
+        System.out.println("coupon code " +couponCode);
+        return;
     }
-
 }
 
